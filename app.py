@@ -214,7 +214,7 @@ def process_excel(uploaded_file):
     final_output.seek(0)
     return final_output
 
-st.title("JENJAN 對賬小幫手 - 賬單生成")
+st.title("JENJAN 對賬小幫手V1 - 賬單生成")
 st.write("請上傳您的 Excel 賬單（檔名不限），點擊【生成新賬單】後即可下載新賬單。")
 
 uploaded_file = st.file_uploader("選擇 Excel 文件", type=["xlsx"], key="excel_uploader")
