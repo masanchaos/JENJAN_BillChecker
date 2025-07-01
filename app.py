@@ -111,7 +111,7 @@ def process_excel(uploaded_file):
         df_customer.loc[idx, '分倉應收賬款（未稅）'] = total
 
         # 計算匯總值：
-        total_sum = df_cust['總計'].sum()
+        total_sum = pd.to_numeric(df_cust['總計'], errors='coerce').sum()
         subtract_sum = df_cust.loc[df_cust['費用編號'] == 921, '總計'].sum()
         final_sum = round((total_sum - subtract_sum) * 1.05)      # 含稅總營收
         branch_revenue = round(total * 1.05)                        # 含稅分倉營收
